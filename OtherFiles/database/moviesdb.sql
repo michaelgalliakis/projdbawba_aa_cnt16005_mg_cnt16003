@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `moviesdb` /*!40100 DEFAULT CHARACTER SET latin1 
 USE `moviesdb`;
 -- MySQL dump 10.13  Distrib 5.6.28, for debian-linux-gnu (i686)
 --
--- Host: localhost    Database: moviesdb
+-- Host: 127.0.0.1    Database: moviesdb
 -- ------------------------------------------------------
 -- Server version	5.6.28-0ubuntu0.15.04.1
 
@@ -30,7 +30,7 @@ CREATE TABLE `categories` (
   `movies` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (5,'Mystery',0),(6,'Action',2),(7,'Adventure',1),(8,'Romance',2),(9,'Sci-Fi',0),(10,'Comedy',2),(11,'Crime',0);
+INSERT INTO `categories` VALUES (5,'Mystery',1),(6,'Action',2),(7,'Adventure',2),(8,'Romance',2),(9,'Sci-Fi',0),(10,'Comedy',2),(11,'Crime',0),(12,'Drama',1),(13,'Horror',1);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +69,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,20,5,'Excellent!!','2017-01-08 01:23:54'),(1,21,1,'Very bad!!','2017-01-08 01:24:16'),(1,23,3,'sdafsdf','2017-01-08 01:19:51'),(1,26,5,'Excellent','2017-01-08 01:23:45'),(2,24,4,'Very good','2017-01-08 01:25:07'),(2,26,4,'Good','2017-01-08 01:24:49'),(4,23,4,'Good','2017-01-08 01:26:47'),(4,25,2,'Bad','2017-01-08 01:23:23'),(4,26,5,'very good movie.','2017-01-08 01:26:18'),(4,27,4,'Very nice\r\n','2017-01-08 01:23:00');
+INSERT INTO `comments` VALUES (1,20,5,'Excellent!!','2017-01-08 01:23:54'),(1,21,1,'Very bad!!','2017-01-08 01:24:16'),(1,23,3,'sdafsdf','2017-01-08 01:19:51'),(1,26,5,'Excellent','2017-01-08 01:23:45'),(1,31,4,'Very nice movie!','2017-01-14 14:09:55'),(1,32,4,'','2017-01-14 13:29:18'),(2,24,4,'Very good','2017-01-08 01:25:07'),(2,26,4,'Good','2017-01-08 01:24:49'),(2,30,4,'very good!','2017-01-14 12:45:40'),(4,23,4,'Good','2017-01-08 01:26:47'),(4,25,2,'Bad','2017-01-08 01:23:23'),(4,26,5,'very good movie.','2017-01-08 01:26:18'),(4,27,4,'Very nice\r\n','2017-01-08 01:23:00'),(4,31,2,'comme ci comme ca','2017-01-14 14:34:05'),(4,32,3,'','2017-01-14 14:12:08'),(4,33,4,'Good','2017-01-14 14:11:31');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -132,7 +132,7 @@ CREATE TABLE `movies` (
   KEY `fk_categories_movies_catID_idx` (`Category`),
   CONSTRAINT `fk_categories_movies_catID` FOREIGN KEY (`Category`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_movies_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +141,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (20,'https://www.youtube.com/watch?v=aOB34_P7KFI','High School 2010','','null',1,7,1,'2017-01-08 01:10:25'),(21,'https://www.youtube.com/watch?v=aMclSgrSccE','LOVE COMES SOFTLY','','null',1,8,1,'2017-01-08 01:11:08'),(23,'https://www.youtube.com/watch?v=H6QiYVrpjD4','Hachi A Dogs Tale (2009)','','null',2,10,2,'2017-01-08 01:13:50'),(24,'https://www.youtube.com/watch?v=Ehu_cYeuSOg','The Croods','','null',4,6,1,'2017-01-08 01:15:32'),(25,'https://www.youtube.com/watch?v=v2oC2vJailQ','WILD CHILD FULL MOVIE ','','null',1,8,1,'2017-01-08 01:20:37'),(26,'https://www.youtube.com/watch?v=pYlhhwxvw4k','Anna 2013 Full English `Movie','','null',2,10,3,'2017-01-08 01:21:17'),(27,'https://www.youtube.com/watch?v=zYikBPPzPH4','Raavan Movie Abhishek Bachchan','Aishwarya Rai','null',4,6,1,'2017-01-08 01:22:40');
+INSERT INTO `movies` VALUES (20,'https://www.youtube.com/watch?v=aOB34_P7KFI','High School 2010','','null',1,7,1,'2017-01-08 01:10:25'),(21,'https://www.youtube.com/watch?v=aMclSgrSccE','LOVE COMES SOFTLY','','null',1,8,1,'2017-01-08 01:11:08'),(23,'https://www.youtube.com/watch?v=H6QiYVrpjD4','Hachi A Dogs Tale (2009)','','null',2,10,2,'2017-01-08 01:13:50'),(24,'https://www.youtube.com/watch?v=Ehu_cYeuSOg','The Croods','','null',4,6,1,'2017-01-08 01:15:32'),(25,'https://www.youtube.com/watch?v=v2oC2vJailQ','WILD CHILD FULL MOVIE ','','null',1,8,1,'2017-01-08 01:20:37'),(26,'https://www.youtube.com/watch?v=pYlhhwxvw4k','Anna 2013 Full English `Movie','','null',2,10,3,'2017-01-08 01:21:17'),(27,'https://www.youtube.com/watch?v=zYikBPPzPH4','Raavan Movie Abhishek Bachchan','Aishwarya Rai','null',4,6,1,'2017-01-08 01:22:40'),(30,'https://www.youtube.com/watch?v=AIR2BPZas2M','Memento','Christopher Nolan','null',2,5,1,'2017-01-14 12:43:42'),(31,'https://www.youtube.com/watch?v=DnBrsV69SRg','Pirates of the Caribbean: Dead Man`s Chest','Gore Verbinski','null',2,7,2,'2017-01-14 13:08:35'),(32,'https://www.youtube.com/watch?v=OFGZltxdKSU','The Illusionist','Neil Burger','null',1,12,2,'2017-01-14 13:25:10'),(33,'https://www.youtube.com/watch?v=QuZgRsZpz_M','Mirrors 2','Victor Garcia','null',1,13,1,'2017-01-14 14:03:52');
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -247,7 +247,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'aggeliki','28bcbaa890f1f1d3d416b3d04f0b05c0','Aggeliki','Alexopoulou','A','agg@tei.gr',3,'\0'),(2,'michalis','4fea6c9fb84ece455b16e47bf1c12435','Michalis','Galliakis','V','mike@yahoo.gr',2,'\0'),(4,'useruser','5cc32e366c87c4cb49e4309b75f57d64','user','user','U','user@user.gr',2,'\0');
+INSERT INTO `users` VALUES (1,'aggeliki','28bcbaa890f1f1d3d416b3d04f0b05c0','Aggeliki','Alexopoulou','A','agg@tei.gr',5,'\0'),(2,'michalis','4fea6c9fb84ece455b16e47bf1c12435','Michalis','Galliakis','V','mike@yahoo.gr',4,'\0'),(4,'useruser','5cc32e366c87c4cb49e4309b75f57d64','user','user','U','user@user.gr',2,'\0');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-14  9:39:28
+-- Dump completed on 2017-01-14 14:41:51
