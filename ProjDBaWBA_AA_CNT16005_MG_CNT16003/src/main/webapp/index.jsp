@@ -24,10 +24,10 @@
                     να προσθέτουν και να βλέπουν ταινίες από το youtube, όπως επίσης και να καταχωρούν σχόλια και βαθμολογίες.
                     <i>Σκοπός είναι να δημιουργηθεί μια κοινότητα, που θα παρέχει την δυνατότητα στα μέλη του, 
                     να μοιράζονται απόψεις και links των  αγαπημένων ταινιών τους.</i>     <br>                    
-                    Όλα τα αρχεία βρίσκονται στο <a href="https://Aaggeliki@bitbucket.org/Aaggeliki/projdbawba_aa_cnt16005_mg_cnt16003.git">Bitbucket</a>.
+                    Όλα τα αρχεία βρίσκονται στο <a href="https://bitbucket.org/Aaggeliki/projdbawba_aa_cnt16005_mg_cnt16003.git">Bitbucket</a>.
                         <hr>
                          
-                Χρήση γλωσσών : HTML, CSS, Javascript, JSP <br/>
+                Χρήση γλωσσών : JAVA (JSP & Servlet), HTML, CSS, Javascript, SQL <br/>
                 Πλατφόρμα ανάπτυξης: Netbeans (IDE 8.2)<br/>
                 Web container: Apache Tomcat 8.0.27.0<br/>
                 DBMS: MySQL<br/>

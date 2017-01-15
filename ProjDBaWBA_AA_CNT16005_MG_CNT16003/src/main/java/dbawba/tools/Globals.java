@@ -21,10 +21,10 @@ public class Globals {
     {
         if (arComment.isEmpty())
             return 0 ;
-        int sum = 0 ;
+        float sum = 0 ;
         for (Comment comment : arComment)
             sum += comment.getReview() ;
-        return (sum/arComment.size()) ;
+        return (int) Math.ceil(sum/arComment.size()) ;
     }
     public static String fixSQLString(String url)
     {
